@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.container .content {
+    display: none;
+    color: white;
+}
+
+.container.zoomed {
+    transform: scale(2);
+    z-index: 10;
+}
+
+.container.zoomed .content {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blue {
+    background-color: blue;
+    height: 150px;
+}
+
+.beige {
+    background-color: beige;
+    width: 150px;
+}
+
+.orange {
+    background-color: orange;
+    height: 200px;
+    width: 200px;
+}
+
+#hoverText {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none;
+}
