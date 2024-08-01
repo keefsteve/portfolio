@@ -1,10 +1,12 @@
 body {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    position: relative;
 }
 
 .container {
@@ -12,6 +14,8 @@ body {
     height: 100px;
     position: relative;
     transition: transform 0.3s ease;
+    margin: 10px;
+    z-index: 1;
 }
 
 .container .content {
@@ -56,4 +60,31 @@ body {
     padding: 5px;
     border-radius: 3px;
     pointer-events: none;
+    z-index: 20; /* Set to a value higher than any other element */
+}
+
+#questionnaire-container {
+    position: absolute; /* Ensure the questionnaire is above other elements */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure the questionnaire is above other elements */
+}
+
+.hidden {
+    display: none;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+#submitBtn {
+    display: block;
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
 }
