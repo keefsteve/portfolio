@@ -1,11 +1,7 @@
 
-if (approachBtn) {
-    approachBtn.addEventListener('click', () => {
-        window.location.href = 'questionnaire.html'; 
-    });
-}
-
-if (window.location.pathname.includes('questionnaire.html')) {
+document.addEventListener('DOMContentLoaded', () => {
+    const submitAnswersBtn = document.getElementById('submitBtn');
+    const questionnaireContainer = document.getElementById('questionnaire-container');
     const questions = [
         {
             question: "What would you rather work as?",
@@ -36,6 +32,16 @@ if (window.location.pathname.includes('questionnaire.html')) {
             question: "How often do you consume alcohol?",
             choices: ["never", "rarely", "sometimes", "often"],
             answer: "rarely"
+        },
+        {
+            question: "How often do you consume psychocative drugs?",
+            choices: ["never", "rarely", "sometimes", "often"],
+            answer: "sometimes"
+        },
+        {
+            question: "Money or Luck?",
+            choices: ["Money", "Luck"],
+            answer: "Luck"
         },
     ];
 
@@ -86,4 +92,4 @@ if (window.location.pathname.includes('questionnaire.html')) {
     }
 
     createQuestionnaire();
-}
+});

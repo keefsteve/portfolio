@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const containers = document.querySelectorAll('.container');
     
     const approachBtn = document.getElementById('approach-btn');
-    const questionnaireContainer = document.getElementById('questionnaire-container');
-    const submitAnswersBtn = document.getElementById('submitBtn');
+
 
     let zoomedInContainer = null;
 
@@ -37,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
             zoomedInContainer.classList.remove('zoomed');
             zoomedInContainer = null;
         }
+
+    if (approachBtn) {
+    approachBtn.addEventListener('click', () => {
+        window.location.href = 'questionnaire.html'; 
+    });
+}
     });
 
 });
