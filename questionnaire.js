@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const submitAnswersBtn = document.getElementById('submitBtn');
     const questionnaireContainer = document.getElementById('questionnaire-container');
+    const answered = false;
     const questions = [
         {
             question: "What would you rather work as?",
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         questions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
             questionDiv.classList.add('question');
+            questionDiv.id = `question${index}`; 
     
             const questionText = document.createElement('p');
             questionText.innerText = q.question;
@@ -103,23 +105,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function calculateScore() {
         let score = 0;
+        let allAnswered = true;
+
         questions.forEach((q, index) => {
             const selected = document.querySelector(`input[name="question${index}"]:checked`);
+            const questionElement = document.getElementById(`question${index}`);
+
             if (selected && selected.value === q.answer) {
                 score++;
             }
+
+            if (!selected) {
+                allAnswered = false;
+                questionElement.classList.add('unanswered');
+            } else {
+                questionElement.classList.remove('unanswered');
+            }
         });
-        return score;
+
+        if (!allAnswered) {
+            alert('Please answer all questions');
+            return null; 
+        }
     }
     
-    if (submitAnswersBtn) {
-        submitAnswersBtn.addEventListener('click', () => {
+        submitAnswersBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
             const score = calculateScore();
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
-            window.location.href = 'revelation.html';
+            if (score !== null) { 
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
+                window.location.href = 'revelation.html';
+            }
         });
-    }
 
     createQuestionnaire();
 });
