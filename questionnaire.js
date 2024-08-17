@@ -9,10 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: "cop"
         },
         {
-            question: "What trait is most pronounced in your persona?",
-            choices: ["empathy", "determination", "intelligence", "creativity"],
-            answer: "determination"
+            question: "It's easy to embarrass me.",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "false"                                                                      // maybe add a less visible option greyed out  
         },
+        {
+            question: "If you had to abandon one of the following traits forever for yourself, which one would it be?",
+            choices: ["empathy", "resilience", "intelligence", "creativity", "courage"],
+            answer: ""                                                                                      // maybe add option to give a score++ if one choses nothing
+        },       
+        {
+            question: "The israeli + international hostages kept captive in Gaza are fair play since there are thousands of palestinian hostages in israeli prisons.",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "false"
+        },                                                                                                
         {
             question: "Who are you putting that O2 mask on first?",
             choices: ["myself", "my kid", "grandma with shortness of breath", "my elderly mom"],
@@ -20,13 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             question: "How long ago did you cry?",
-            choices: ["days", "weeks", "months", "years"],
+            choices: ["< 10 days ago", "10-30 days ago", "few months ago", "few years ago", "long time ago"],
             answer: "weeks"
         },
         {
+            question: "I don’t mind if someone I dislike gets hurt",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "somewhat false"
+        },
+        {
             question: "Loyalty or honesty?",
-            choices: ["loyalty", "honesty", "neither", "both"],
-            answer: "both"
+            choices: ["loyalty", "honesty", "neither"],
+            answer: "loyalty"
+        },
+        {
+            question: "I have no strong desire to parachute out of an airplane.",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "somewhat false"
         },
         {
             question: "How often do you consume alcohol?",
@@ -37,6 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
             question: "How often do you consume psychocative drugs?",
             choices: ["never", "rarely", "sometimes", "often"],
             answer: "sometimes"
+        },
+        {
+            question: "Is NATO escalating the UKR-RUS war?",
+            choices: ["Yes", "No"],
+            answer: "No"
+        },
+        {
+            question: "People often abuse my trust.",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "somewhat true"
         },
         {
             question: "Money or Luck?",

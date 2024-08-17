@@ -1,30 +1,42 @@
+
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;  
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
     position: relative;
+    overflow: hidden; 
 }
 
 .container {
-    width: 100px;
-    height: 100px;
-    position: relative;
+    position: absolute; 
+    overflow: hidden; 
     transition: transform 0.3s ease;
     margin: 10px;
     z-index: 1;
 }
 
+.container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
 .container .content {
     display: none;
+    text-align: justify; 
+    width: 100%; 
+    overflow: hidden; 
+    white-space: pre-wrap; 
+    font-size: 0.7em;
     color: white;
 }
 
 .container.zoomed {
-    transform: scale(2);
+    transform: scale(1.3);
     z-index: 10;
 }
 
@@ -37,19 +49,33 @@ body {
 }
 
 .blue {
-    background-color: blue;
-    height: 150px;
+    background-color: #67bee1;
+    height: 190px;
+    width: 300px;
 }
 
-.beige {
-    background-color: beige;
-    width: 150px;
+.red {
+    background-color: rgb(203, 124, 124);
+    width: 222px;
+    height: 222px;
 }
 
 .orange {
-    background-color: orange;
+    background-color: #d8af64;
     height: 200px;
-    width: 200px;
+    width: 500px;
+}
+
+.green {
+    background-color: rgb(88, 160, 88);
+    height: 150px;
+    width: 350px;
+}
+
+.grey {
+    background-color: hsl(40, 8%, 44%);
+    height: 400px;
+    width: 300px;
 }
 
 #hoverText {
@@ -60,7 +86,7 @@ body {
     padding: 5px;
     border-radius: 3px;
     pointer-events: none;
-    z-index: 20; /* Set to a value higher than any other element */
+    z-index: 20;
 }
 
 #questionnaire-container {
@@ -76,7 +102,6 @@ body {
     padding: 20px; 
     box-shadow: 0 0 10px rgba(0,0,0,0.1); 
 }
-
 
 .hidden {
     display: none;
@@ -94,4 +119,15 @@ body {
 #result {
     margin-top: 20px;
     font-weight: bold;
+}
+
+#approach-btn {
+    position: absolute; 
+    top: height/2;  
+    left: width/2; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
