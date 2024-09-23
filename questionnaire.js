@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             question: "If you had to abandon one of the following traits forever for yourself, which one would it be?",
-            choices: ["empathy", "resilience", "intelligence", "creativity", "courage"],
-            answer: ""                                                                                      // maybe add option to give a score++ if one choses nothing
+            choices: ["empathy", "resilience", "intelligence", "creativity", "courage", " "],
+            answer: " "                                                                                      // maybe add option to give a score++ if one choses nothing
         },       
         {
             question: "Is NATO escalating the UKR-RUS war?",
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             question: "How long ago did you cry?",
             choices: ["< 10 days ago", "10-30 days ago", "few months ago", "few years ago", "long time ago"],
-            answer: "weeks"
+            answer: "10-30 days ago"
         },
         {
             question: "I don’t mind if someone I dislike gets hurt",
