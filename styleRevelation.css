@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: hsl(0, 3%, 47%);
+    background-color: hsla(0, 71%, 75%, 0.687);
     position: relative;
     overflow: hidden; 
 }
@@ -37,7 +37,7 @@ body {
     left: 50%;
     overflow: hidden; 
     white-space: pre-wrap; 
-    font-size: 0.7em;
+    font-size: 0.6em;
     color: #f7f2f2;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .earth {
-    background-color: #a7a1a1;
+    background-color: #a7a1a100;
     width: 300px;
     height: 420px;
     z-index: 3;
@@ -70,9 +70,6 @@ body {
 
 .orange {
     background-color: hsl(23, 58%, 81%);
-    border: 5px solid hsl(0, 22%, 85%);
-    box-sizing: border-box;
-    overflow: hidden;
     height: 200px;
     width: 200px;
     z-index: 11;
@@ -81,7 +78,7 @@ body {
 
 
 .green {
-    background-color: hsla(120, 19%, 61%, 0.611);
+    background-color: hsla(0, 72%, 75%, 0);
     height: 350px;
     width: 350px;
     scale: 0.6;
@@ -90,7 +87,7 @@ body {
 
 .grey {
     background-color: rgb(195, 187, 170);
-    height: 250px;
+    height: 150px;
     width: 240px;
     z-index: 4;
 }
@@ -108,7 +105,7 @@ body {
     z-index: 4;
 }
 .privileges {
-    background-color: #a6b7a8;
+    background-color: #c384b2;
     height: 250px;
     width: 240px;
     z-index: 4;
@@ -130,7 +127,7 @@ body {
     z-index: 9;
 }
 
-.imgTwo {
+.sakit {
     width: 100%;
     height: 50%;
     scale: 0.7;

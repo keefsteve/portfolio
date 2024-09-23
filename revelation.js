@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.container.pink .content').innerHTML = data.post_pinkContainerText; 
             document.querySelector('.container.privileges .content').innerHTML = data.post_privilegesContainerText;
             document.querySelector('.container.food .content').innerHTML = data.post_foodContainerText;
-            document.querySelector('.container.boundries .content').innerHTML = data.post_boundriesContainerText;  
+            document.querySelector('.container.boundries .content').innerHTML = data.post_boundriesContainerText; 
+            document.querySelector('.container.grey .content').innerHTML = data.post_greyContainerText;  
+            document.querySelector('.container.orange .content').innerHTML = data.post_orangeContainerText;
         })
         .catch(error => console.error('Error loading content:', error));
 
@@ -23,17 +25,44 @@ document.addEventListener('DOMContentLoaded', () => {
         function displayObjectsBasedOnScore(userScore) {
             containers.forEach(container => {
                 container.style.display = 'none';
-    
-                if (userScore == 14) {
-                    container.style.display = 'block';
-                } else if (userScore >= 10 && userScore < 14) {
-                    if (container.classList.contains('pink') || container.classList.contains('green')) {
+        
+                switch (true) {
+                    case userScore == 14:
+                        if (container.classList.contains('green') || 
+                        container.classList.contains('earth') || 
+                        container.classList.contains('orange') || 
+                        container.classList.contains('grey') || 
+                        container.classList.contains('food') || 
+                        container.classList.contains('boundries') || 
+                        container.classList.contains('privileges') || 
+                        container.classList.contains('imgOne') || 
+                        container.classList.contains('sakit') || 
+                        container.classList.contains('imgThree')) {
+                            container.style.display = 'block';
+                        }
+                        break;
+                    case userScore >= 12 && userScore < 14:
+                        if (container.classList.contains('green') || // removed earth
+                        container.classList.contains('grey') || 
+                        container.classList.contains('orange') || 
+                        container.classList.contains('food') || 
+                        container.classList.contains('boundries') || 
+                        container.classList.contains('privileges') || 
+                        container.classList.contains('imgOne') || 
+                        container.classList.contains('sakit')) { // removed imgThree
+                            container.style.display = 'block';
+                        }
+                        break;
+                    case userScore >= 7 && userScore < 10:
+                    if (!container.classList.contains('grey') || !container.classList.contains('pink') || !container.classList.contains('green')) {
                         container.style.display = 'block';
                     }
-                } else if (userScore >= 5 && userScore < 10) {
-                    if (container.classList.contains('grey')) {
+                    break;
+                    case userScore >= 2 && userScore < 7:
+                    if (!container.classList.contains('grey') || !container.classList.contains('pink') || !container.classList.contains('green') || !container.classList.contains('earth')) {
                         container.style.display = 'block';
                     }
+                    break;
                 }
             });
         }
@@ -91,11 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.style.top = `${0.12 * height}px`; 
                     break;
             case(container.classList.contains('earth')):
-                container.style.left = `${width - 700}px`;
-                container.style.top = `${0.52 * height}px`;
+                container.style.left = `${width - 500}px`;
+                container.style.top = `${0.42 * height}px`;
             break;
             case(container.classList.contains('grey')):
-                container.style.left = `${0.30 * width}px`;
+                container.style.left = `${0.1 * width}px`;
                 container.style.top = `${0.45 * height}px`;
                 break;
             case(container.classList.contains('green')):
@@ -118,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.style.left = `${0.1 * width}px`;
             container.style.top = `${0.3 * height}px`;
             break;
-            case(container.classList.contains('imgTwo')):
+            case(container.classList.contains('sakit')):
                 container.style.left = `${0.42 * width}px`;
                 container.style.top = `${0.55 * height}px`; 
                 break;
