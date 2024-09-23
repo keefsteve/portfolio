@@ -127,6 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please answer all questions');
             return null; 
         }
+         
+    return score;
     }
     
         submitAnswersBtn.addEventListener('click', (e) => {
@@ -134,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const score = calculateScore();
             if (score !== null) { 
                 const resultDiv = document.getElementById('result');
-                   localStorage.setItem('userScore', score);
-                   resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
+                localStorage.setItem('userScore', score); 
+                resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
                 window.location.href = 'revelation.html';
             }
         });

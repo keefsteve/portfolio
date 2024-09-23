@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hoverText = document.getElementById('hoverText');
     const containers = document.querySelectorAll('.container');
 
-    const score = localStorage.getItem('userScore');
-    
+    const userScore = parseInt(localStorage.getItem('userScore'), 10); 
     
 
     let zoomedInContainer = null;
@@ -21,17 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading content:', error));
 
        
-        function displayObjectsBasedOnScore(score) {
+        function displayObjectsBasedOnScore(userScore) {
             containers.forEach(container => {
                 container.style.display = 'none';
     
-                if (score == 14) {
+                if (userScore == 14) {
                     container.style.display = 'block';
-                } else if (score >= 10 && score < 14) {
+                } else if (userScore >= 10 && userScore < 14) {
                     if (container.classList.contains('pink') || container.classList.contains('green')) {
                         container.style.display = 'block';
                     }
-                } else if (score >= 5 && score < 10) {
+                } else if (userScore >= 5 && userScore < 10) {
                     if (container.classList.contains('grey')) {
                         container.style.display = 'block';
                     }
@@ -39,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     
-        displayObjectsBasedOnScore(score);
+        displayObjectsBasedOnScore(userScore);
+
 
         /*
     function setRandomPosition(container) {
