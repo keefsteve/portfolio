@@ -14,6 +14,8 @@ body {
 .container {
     position: absolute; 
     overflow: hidden; 
+    justify-content: center;  
+    align-items: center;
     display: flex;
     transition: transform 0.3s ease;
     margin: 10px;
@@ -28,10 +30,11 @@ body {
 
 .container .content {
     display: flex;
-    text-align: left;
+    text-align: justify;
     font-family: 'Roboto', sans-serif; 
-
-    width: 90%; 
+    width: 90%;
+    top: 50%;
+    left: 50%;
     overflow: hidden; 
     white-space: pre-wrap; 
     font-size: 0.7em;
@@ -156,20 +159,6 @@ body {
     z-index: 20;
 }
 
-#questionnaire-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 80%; 
-    height: 80%; 
-    overflow-y: auto; 
-    background-color: #e0bbbbce;
-    padding: 20px; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-}
-
 .hidden {
     display: none;
 }
@@ -200,6 +189,31 @@ body {
     font-size: 10px;
     z-index: 19;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.ripple-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-container:hover::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 2s ease-out;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
 }
 
 

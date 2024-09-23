@@ -14,6 +14,8 @@ body {
 .container {
     position: absolute; 
     overflow: hidden; 
+    justify-content: center;  
+    align-items: center;
     display: flex;
     transition: transform 0.3s ease;
     margin: 10px;
@@ -27,11 +29,12 @@ body {
 }
 
 .container .content {
-    display: none;
-    text-align: left;
+    display: flex;
+    text-align: justify;
     font-family: 'Roboto', sans-serif; 
-
-    width: 90%; 
+    width: 90%;
+    top: 50%;
+    left: 50%;
     overflow: hidden; 
     white-space: pre-wrap; 
     font-size: 0.7em;
@@ -71,7 +74,7 @@ body {
 
 
 .green {
-    background-color: hsla(120, 19%, 61%, 0.611);
+    background-color: hwb(120 54% 32%);
     height: 350px;
     width: 350px;
     scale: 0.6;
@@ -158,8 +161,8 @@ body {
 
 #approach-btn {
     position: absolute; 
-    top: 50%;  
-    left: 50%; 
+    top: 77%;  
+    left: 70%; 
     transform: translate(-50%, -50%);
     background: linear-gradient(135deg, hsl(12, 59%, 77%), rgb(175, 163, 157));
     border: none;
@@ -171,3 +174,32 @@ body {
 }
 
 
+nav {
+    position: absolute; /* Default */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #333;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
