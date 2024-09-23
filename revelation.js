@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hoverText = document.getElementById('hoverText');
     const containers = document.querySelectorAll('.container');
+
+    const score = localStorage.getItem('userScore');
+    
     
 
     let zoomedInContainer = null;
@@ -18,42 +21,64 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading content:', error));
 
        
-        
-        function setRandomPosition(container) {
-            const containerWidth = container.offsetWidth;
-            const containerHeight = container.offsetHeight;
-            const buffer = 100; // space from edges and center
+        function displayObjectsBasedOnScore(score) {
+            containers.forEach(container => {
+                container.style.display = 'none';
     
-            
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const noGoWidth = 20; 
-            const noGoHeight = 30; 
-    
-            let validPosition = false;
-            let randomLeft, randomTop;
-    
-            while (!validPosition) {
-                randomLeft = Math.random() * (window.innerWidth - 300 - containerWidth - 2 * buffer) + buffer;
-                randomTop = Math.random() * (window.innerHeight - containerHeight - 2 * buffer) + buffer;
-    
-                
-                const withinNoGoZone = (
-                    randomLeft + containerWidth > centerX - noGoWidth / 2 &&
-                    randomLeft < centerX + noGoWidth / 2 &&
-                    randomTop + containerHeight > centerY - noGoHeight / 2 &&
-                    randomTop < centerY + noGoHeight / 2
-                );
-    
-                if (!withinNoGoZone) {
-                    validPosition = true; 
+                if (score == 14) {
+                    container.style.display = 'block';
+                } else if (score >= 10 && score < 14) {
+                    if (container.classList.contains('pink') || container.classList.contains('green')) {
+                        container.style.display = 'block';
+                    }
+                } else if (score >= 5 && score < 10) {
+                    if (container.classList.contains('grey')) {
+                        container.style.display = 'block';
+                    }
                 }
-            }
-            
-            container.style.left = `${randomLeft}px`;
-            container.style.top = `${randomTop}px`;
-
+            });
         }
+    
+        displayObjectsBasedOnScore(score);
+
+        /*
+    function setRandomPosition(container) {
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+        const buffer = 100; // space from edges and center
+
+        
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const noGoWidth = 20; 
+        const noGoHeight = 30; 
+
+        let validPosition = false;
+        let randomLeft, randomTop;
+
+        while (!validPosition) {
+            randomLeft = Math.random() * (window.innerWidth - 300 - containerWidth - 2 * buffer) + buffer;
+            randomTop = Math.random() * (window.innerHeight - containerHeight - 2 * buffer) + buffer;
+
+            
+            const withinNoGoZone = (
+                randomLeft + containerWidth > centerX - noGoWidth / 2 &&
+                randomLeft < centerX + noGoWidth / 2 &&
+                randomTop + containerHeight > centerY - noGoHeight / 2 &&
+                randomTop < centerY + noGoHeight / 2
+            );
+
+            if (!withinNoGoZone) {
+                validPosition = true; 
+            }
+        }
+        
+        container.style.left = `${randomLeft}px`;
+        container.style.top = `${randomTop}px`;
+    } */
+
+
+        
 
         function setPosition(container) {
             const width = window.innerWidth;

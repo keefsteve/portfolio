@@ -15,15 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: "false"                                                                      // maybe add a less visible option greyed out  
         },
         {
+            question: "How often do you consume alcohol?",
+            choices: ["never", "rarely", "sometimes", "often"],
+            answer: "rarely"
+        },
+        {
             question: "If you had to abandon one of the following traits forever for yourself, which one would it be?",
             choices: ["empathy", "resilience", "intelligence", "creativity", "courage"],
             answer: ""                                                                                      // maybe add option to give a score++ if one choses nothing
         },       
         {
-            question: "The israeli + international hostages kept captive in Gaza are fair play since there are thousands of palestinian hostages in israeli prisons.",
-            choices: ["true", "somewhat true", "somewhat false", "false"],
-            answer: "false"
-        },                                                                                                
+            question: "Is NATO escalating the UKR-RUS war?",
+            choices: ["Yes", "No"],
+            answer: "No"
+        },                                                                                              
         {
             question: "Who are you putting that O2 mask on first?",
             choices: ["myself", "my kid", "grandma with shortness of breath", "my elderly mom"],
@@ -45,24 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
             answer: "loyalty"
         },
         {
+            question: "The israeli + international hostages kept captive in Gaza are fair play since there are thousands of palestinian hostages in israeli prisons.",
+            choices: ["true", "somewhat true", "somewhat false", "false"],
+            answer: "false"
+        },  
+        {
             question: "I have no strong desire to parachute out of an airplane.",
             choices: ["true", "somewhat true", "somewhat false", "false"],
             answer: "somewhat false"
         },
         {
-            question: "How often do you consume alcohol?",
-            choices: ["never", "rarely", "sometimes", "often"],
-            answer: "rarely"
-        },
-        {
             question: "How often do you consume psychocative drugs?",
             choices: ["never", "rarely", "sometimes", "often"],
             answer: "sometimes"
-        },
-        {
-            question: "Is NATO escalating the UKR-RUS war?",
-            choices: ["Yes", "No"],
-            answer: "No"
         },
         {
             question: "People often abuse my trust.",
@@ -134,10 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const score = calculateScore();
             if (score !== null) { 
                 const resultDiv = document.getElementById('result');
-                resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
+                   localStorage.setItem('userScore', score);
+                   resultDiv.innerText = `Your score is: ${score} / ${questions.length}`;
                 window.location.href = 'revelation.html';
             }
         });
+
 
     createQuestionnaire();
 });
