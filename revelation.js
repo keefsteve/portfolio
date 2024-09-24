@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (container.classList.contains('green') || // removed earth
                     container.classList.contains('grey') || // removed orange
                     container.classList.contains('boundries') || // removed privileges
-                    container.classList.contains('imgOne') { // removed imgThree
+                    container.classList.contains('imgOne')) { // removed imgThree
                         container.style.display = 'block';
                     }
                     break;
