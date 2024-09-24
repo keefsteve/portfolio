@@ -93,6 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         container.style.display = 'block';
                     }
                     break;
+
+                    case userScore >= 0 && userScore < 6:
+                    if (container.classList.contains('boundries')) { // basic dialogue
+                        container.style.display = 'block';
+                    }
+                    break;
             }
             });
         }
