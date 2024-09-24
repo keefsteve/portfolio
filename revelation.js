@@ -54,17 +54,46 @@ document.addEventListener('DOMContentLoaded', () => {
                             container.style.display = 'block';
                         }
                         break;
-                    case userScore >= 7 && userScore < 10:
-                    if (!container.classList.contains('grey') || !container.classList.contains('pink') || !container.classList.contains('green')) {
+                    case userScore >= 10 && userScore < 12:
+                        if (container.classList.contains('green') || // removed earth
+                        container.classList.contains('grey') || // removed orange
+                        container.classList.contains('food') || 
+                        container.classList.contains('boundries') || 
+                        container.classList.contains('privileges') || 
+                        container.classList.contains('imgOne') || 
+                        container.classList.contains('sakit')) { // removed imgThree
+                            container.style.display = 'block';
+                        }
+                        break;
+                    case userScore >= 8 && userScore < 10:
+                    if (container.classList.contains('green') || // removed earth
+                    container.classList.contains('grey') || // removed orange
+                    container.classList.contains('food') || 
+                    container.classList.contains('boundries') || 
+                    container.classList.contains('imgOne') || // removed privileges
+                    container.classList.contains('sakit')) { // removed imgThree
                         container.style.display = 'block';
                     }
                     break;
-                    case userScore >= 2 && userScore < 7:
-                    if (!container.classList.contains('grey') || !container.classList.contains('pink') || !container.classList.contains('green') || !container.classList.contains('earth')) {
+
+                    case userScore >= 6 && userScore < 8:
+                        if (container.classList.contains('green') || // removed earth
+                        container.classList.contains('grey') || // removed orange
+                        container.classList.contains('boundries') || // removed privileges
+                        container.classList.contains('imgOne') ||  // removed food
+                        container.classList.contains('sakit')) { // removed imgThree
+                            container.style.display = 'block';
+                        }
+                        break;
+                    case userScore >= 6 && userScore < 8:
+                    if (container.classList.contains('green') || // removed earth
+                    container.classList.contains('grey') || // removed orange
+                    container.classList.contains('boundries') || // removed privileges
+                    container.classList.contains('imgOne') { // removed imgThree
                         container.style.display = 'block';
                     }
                     break;
-                }
+            }
             });
         }
     
