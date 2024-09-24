@@ -1,4 +1,10 @@
 
+.purp, .earth, .orange, .green, .grey, .food, .boundries, .privileges, .pink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -10,35 +16,39 @@ body {
     position: relative;
     overflow: hidden; 
 }
-
 .container {
     position: absolute; 
-    overflow: hidden; 
-    justify-content: center;  
-    align-items: center;
     display: flex;
+    justify-content: center;   
+    align-items: center;       
+    flex-direction: column;  
+    width: auto;               
+    height: auto;              
     transition: transform 0.3s ease;
     margin: 10px;
     z-index: 1;
 }
 
+.container .content {
+    font-family: 'Roboto', sans-serif; 
+    width: 90%;               
+    font-size: 0.6em;
+    color: #f7f2f2;
+    white-space: pre-wrap;     
+    text-align: left;          
+    margin: auto 0;          
+}
+
+.container.zoomed .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .container img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-}
-
-.container .content {
-    display: flex;
-    text-align: justify;
-    font-family: 'Roboto', sans-serif; 
-    width: 90%;
-    top: 50%;
-    left: 50%;
-    overflow: hidden; 
-    white-space: pre-wrap; 
-    font-size: 0.6em;
-    color: #f7f2f2;
 }
 
 .container.zoomed {
@@ -46,12 +56,9 @@ body {
     z-index: 10;
 }
 
-.container.zoomed .content {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.rtl-text {
+    direction: rtl;
+    text-align: right;
 }
 
 .purp {
@@ -94,26 +101,26 @@ body {
 
 .food {
     background-color: hsla(22, 33%, 54%, 0.883);
-    height: 100px;
-    width: 80px;
+    height: 110px;
+    width: 200px;
     z-index: 4;
 }
 .boundries {
     background-color: hsl(0, 76%, 62%);
-    height: 290px;
-    width: 210px;
+    height: 166px;
+    width: 222px;
     z-index: 4;
 }
 .privileges {
     background-color: #c384b2;
-    height: 250px;
-    width: 240px;
+    height: 190px;
+    width: 220px;
     z-index: 4;
 }
 
 .pink {
-    background-color: hsl(336, 29%, 73%);
-    height: 250px;
+    background-color: hsl(336, 49%, 71%);
+    height: 150px;
     width: 240px;
     z-index: 4;
 }
@@ -131,8 +138,8 @@ body {
     width: 100%;
     height: 50%;
     scale: 0.7;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     z-index: 9;
 }
 

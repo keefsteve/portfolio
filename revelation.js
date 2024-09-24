@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (container.classList.contains('green') || 
                         container.classList.contains('earth') || 
                         container.classList.contains('orange') || 
+                        container.classList.contains('pink') || 
                         container.classList.contains('grey') || 
                         container.classList.contains('food') || 
                         container.classList.contains('boundries') || 
@@ -68,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         displayObjectsBasedOnScore(userScore);
-
 
         /*
     function setRandomPosition(container) {
@@ -119,6 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.style.left = `${0.75 * width}px`;
                     container.style.top = `${0.12 * height}px`; 
                     break;
+                    case(container.classList.contains('orange')):
+                    container.style.left = `${0.45 * width}px`;
+                    container.style.top = `${0.72 * height}px`; 
+                    break;
             case(container.classList.contains('earth')):
                 container.style.left = `${width - 500}px`;
                 container.style.top = `${0.42 * height}px`;
@@ -128,19 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.style.top = `${0.45 * height}px`;
                 break;
             case(container.classList.contains('green')):
-                container.style.left = `${0.24 * width}px`;
-                container.style.top = `${0.4 * height}px`;
+                container.style.left = `${0.2 * width}px`;
+                container.style.top = `${0.42 * height}px`;
                 break;
                 case(container.classList.contains('food')):
-                container.style.left = `${0.64 * width}px`;
+                container.style.left = `${0.55 * width}px`;
                 container.style.top = `${0.07 * height}px`;
                 break;
                 case(container.classList.contains('boundries')):
                 container.style.left = `${0.44 * width}px`;
-                container.style.top = `${0.2 * height}px`;
+                container.style.top = `${0.3 * height}px`;
                 break;
                 case(container.classList.contains('privileges')):
-                container.style.left = `${0.24 * width}px`;
+                container.style.left = `${0.2 * width}px`;
                 container.style.top = `${0.02 * height}px`;
                 break;
             case(container.classList.contains('imgOne')):
@@ -148,8 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
             container.style.top = `${0.3 * height}px`;
             break;
             case(container.classList.contains('sakit')):
-                container.style.left = `${0.42 * width}px`;
-                container.style.top = `${0.55 * height}px`; 
+                container.style.left = `${0.85 * width}px`;
+                container.style.top = `${0.42 * height}px`; 
                 break;
             case(container.classList.contains('imgThree')):
                     container.style.left = `${width - 490}px`;
